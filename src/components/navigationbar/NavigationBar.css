@@ -1,0 +1,5 @@
+.navigationBarWrapper {
+    display: grid;
+    grid-template-colums: repeat(10, 1fr);
+    background-color: olivedrab;
+}
