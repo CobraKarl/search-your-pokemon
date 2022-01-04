@@ -3,3 +3,16 @@
     grid-template-colums: repeat(10, 1fr);
     background-color: olivedrab;
 }
+
+.logotype {
+    width: 100px;
+}
+
+.signIn {
+    grid-column: 9/10;
+    align-self: center;
+}
+
+.logotype, .signIn {
+    cursor: pointer;
+}
