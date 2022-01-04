@@ -3,7 +3,7 @@ import React from "react";
 export const HomeView = () => {
     return(
         <div>
-            <h1>Detta är HomeView</h1>
+            <h1>This is the HomeView page</h1>
         </div>
     )
 }

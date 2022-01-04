@@ -12,7 +12,7 @@ export const Routing = (props) => {
             <Routes>
                 <Route exact path="/recipe" element={ <ReceptView/>} />
                 <Route exact path="/signin" element={ <SigInView/>} />
-                <Route element={ <HomeView/> } />
+                <Route path="/" element={ <HomeView/> } />
             </Routes>
         </Router>
     )
