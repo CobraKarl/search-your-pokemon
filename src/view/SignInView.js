@@ -1,15 +1,22 @@
-import React, {useState} from "react"
+import React, {useContext, useState} from "react"
+import {UserContext} from "../shared/global/provider/UserProvider"
 
 export const SigInView = () => {
 
-   const [loggedInUser, setLoggedInUser] = useState () 
+   const [Username, setUsername] = useState () 
    const [Password, setPassWord] = useState ()
+   const [authenticatedUser, setAuthenticatedUser] = useContext (UserContext)
+   const login = () => {
+       setAuthenticatedUser(Username)
+
+   }
 
     return (
         <div>
-            <span>Username: </span><input onChange={event => setLoggedInUser (event.target.value)} /> <br/>
+            <span>Username: </span><input onChange={event => setUsername (event.target.value)} /> <br/>
             <span>Password: </span><input type="Password" onChange={event => setPassWord (event.target.value)} /> <br/>
-            <button>Login</button>
+            <button onClick={() => login()}>Login</button>
+            <button onClick={()=> alert(authenticatedUser)}>Show Authenticated User! </button>
         </div>
     )
 }
