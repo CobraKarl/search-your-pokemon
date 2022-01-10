@@ -1,7 +1,10 @@
 import React, {useContext, useState} from "react"
 import {UserContext} from "../shared/global/provider/UserProvider"
+import {useNavigate} from "react-router-dom"
 
 export const SigInView = () => {
+    const navigate = useNavigate()
+
 
    const [username, setUsername] = useState () 
    const [password, setPassWord] = useState ()
@@ -9,6 +12,8 @@ export const SigInView = () => {
    
    const login = () => {
        setAuthenticatedUser(username)
+       localStorage.setItem("usename", username)
+       navigate("/")
    }
 
     return (
