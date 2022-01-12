@@ -6,6 +6,7 @@ import { SigInView } from "../view/SignInView"
 import {UserContext} from "../shared/global/provider/UserProvider"
 import { ProfileView } from "../view/ProfileView"
 import { SettingsView } from "../view/SettingsView"
+import RoutingPath from "./RoutingPath"
 
 
 export const Routing = (props) => {
@@ -25,10 +26,10 @@ export const Routing = (props) => {
         <Router>
             {props.children}
             <Routes>
-                <Route exact path="/recipe" element={ <ReceptView/>} />
-                <Route exact path="/signin" element={ <SigInView/>} />
-                <Route exact path="/profile" element={<ProfileView/>} />
-                <Route exact path="/settings" element={<SettingsView/>} />
+                <Route exact path={RoutingPath.ReceptView} element={ <ReceptView/>} />
+                <Route exact path={RoutingPath.SignInView} element={ <SigInView/>} />
+                <Route exact path={RoutingPath.ProfileView} element={<ProfileView/>} />
+                <Route exact path={RoutingPath.SettingsView} element={<SettingsView/>} />
                 <Route path="/" element={ <HomeView/> } />
                 
             </Routes>

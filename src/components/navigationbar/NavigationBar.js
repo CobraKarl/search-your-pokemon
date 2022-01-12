@@ -4,6 +4,7 @@ import Logotype from "../../shared/images/logotype.svg"
 import {useNavigate} from "react-router-dom"
 import { UserContext } from "../../shared/global/provider/UserProvider"
 import { Profile } from "../profile/Profile"
+import RoutingPath from "../../routes/RoutingPath"
 
 export const Navigationbar = () => {
     const navigate = useNavigate();
@@ -12,12 +13,12 @@ export const Navigationbar = () => {
     const displayUserIfAuthenticated = () => {
         return (authenticatedUser)
             ? <div className="profle"> <Profile /> </div> 
-            :<span onClick={() => navigate ("/signin")} className="signIn">Sign in</span>
+            :<span onClick={() => navigate (RoutingPath.SignInView)} className="signIn">Sign in</span>
     }
 
     return (
         <div className="navigationBarWrapper">
-            <img onClick={() => navigate ("/")}
+            <img onClick={() => navigate (RoutingPath.HomeView)}
                 className="logotype"
                 src={Logotype} 
                 alt="Error..."/>
