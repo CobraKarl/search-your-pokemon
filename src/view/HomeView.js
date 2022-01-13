@@ -3,9 +3,11 @@ import Axios from "axios"
 
 export const HomeView = () => {
     const [data, setData] = useState()
+    const [search, setSearch] = useState("")
+
 
     const fetchDataFromExternalAPI = () => {
-        Axios.get("https://pokeapi.co/api/v2/pokemon/bulbasaur")
+        Axios.get(`https://pokeapi.co/api/v2/pokemon/${search.toLowerCase()}`)
         .then((response) => setData(response.data))
         .catch((Error) => console.log(Error))
     }
@@ -17,7 +19,9 @@ export const HomeView = () => {
                 <h3>id: {data.id}</h3>
                 <h3>weight: {data.weight}</h3>
                 <h3>height: {data.height}</h3>
-                <h3>typ: {data.types[0].type.name}</h3>
+                <h3>type: {data.types[0].type.name}</h3>
+     
+                
             </div>
 
         }
@@ -25,9 +29,12 @@ export const HomeView = () => {
 
     return(
         <div>
+            <span>Search for Pokemon: </span>
+            <input onChange={(Event) => setSearch (Event.target.value)} />
+
+            <br />
             <button onClick={() => fetchDataFromExternalAPI()}>Make API call</button>
             {displayData()}
-            <button onClick={() =>console.log(data)}>Show State!</button>
         </div>
     )
 }
