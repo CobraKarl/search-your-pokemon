@@ -2,7 +2,7 @@ import React, {useContext, useState} from "react"
 import {UserContext} from "../shared/global/provider/UserProvider"
 import {useNavigate} from "react-router-dom"
 
-export const SigInView = () => {
+export const SignInView = () => {
     const navigate = useNavigate()
 
 

@@ -10,14 +10,14 @@
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    grid-column: 4/5;
+    grid-column: 1/5;
 
 
 }
 
 .displayedUsername {
-    align-self: center;
-    grid-column: 7/11;
+    align-self: centre;
+    grid-column: 7/8;
 }
 .profileDropdown {
     display: none;
