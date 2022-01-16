@@ -12,16 +12,35 @@ export const HomeView = () => {
         .catch((Error) => console.log(Error))
     }
 
+    
+
+
     const displayData = () => {
         if(data) {
             return <div>
-                <h3>name: {data.name}</h3>
-                <h3>id: {data.id}</h3>
-                <h3>weight: {data.weight}</h3>
-                <h3>height: {data.height}</h3>
-                <h3>type: {data.types[0].type.name}</h3>
-     
-                
+                <font face="Calibri">Name:<b> {data.name}</b></font>
+                <br></br>
+                <font face="Calibri">Id Number:<b> {data.id}</b></font>
+                <br></br>
+                <font face="Calibri">Weight: <b>{data.weight}</b></font>
+                <br></br>
+                <font face="Calibri">Height:<b> {data.height}</b></font>
+                <br></br>
+                <font face="Calibri">Type: <b>{data.types[0].type.name}</b></font>
+                <br></br>
+                <br></br>
+                <b>PICTURES:</b>
+                <br></br>
+                <noscript><img src={data.sprites.other.dream_world.front_default}/></noscript>
+                <font face="Calibri"><b>Front:</b>
+                <br></br>
+                </font><img src={data.sprites.other.home.front_default}/>
+                <br></br>
+                <font face="Calibri"><b>Shiny:</b>
+                <br></br>
+                </font><img src={data.sprites.other.home.front_shiny}/>
+
+                    
             </div>
 
         }
@@ -29,11 +48,11 @@ export const HomeView = () => {
 
     return(
         <div>
-            <span>Search for Pokemon: </span>
+            <span>Search for Pokemon (Name or Id Number): </span>
             <input onChange={(Event) => setSearch (Event.target.value)} />
 
             <br />
-            <button onClick={() => fetchDataFromExternalAPI()}>Make API call</button>
+            <button onClick={() => fetchDataFromExternalAPI()}>Find Pokemon</button>
             {displayData()}
         </div>
     )
