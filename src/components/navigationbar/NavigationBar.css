@@ -8,6 +8,9 @@
     width: 300px;
 }
 
+.ashpic {
+    width: 200px;
+}
 .signIn {
     grid-column: 9/10;
     align-self: center;

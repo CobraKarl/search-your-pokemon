@@ -6,6 +6,7 @@ import { UserContext } from "../../shared/global/provider/UserProvider"
 import { Profile } from "../profile/Profile"
 import RoutingPath from "../../routes/RoutingPath"
 
+
 export const Navigationbar = () => {
     const navigate = useNavigate();
     const [authenticatedUser, setAuthenticatedUser] = useContext(UserContext)
@@ -23,6 +24,7 @@ export const Navigationbar = () => {
                 src={Logotype} 
                 alt="Error..."/>
             {displayUserIfAuthenticated()}
+          
         </div>
     )
 }
