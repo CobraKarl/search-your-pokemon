@@ -19,17 +19,17 @@ export const HomeView = () => {
     const displayData = () => {
         if(data) {
             return <div>
-                <font face="Calibri"><h2>Name:<b> {data.name}</b></h2></font>
+                <font face="Calibri"><h3>Name:<b> {data.name}</b></h3></font>
                
-                <font face="Calibri"><h2>Id Number:<b> {data.id}</b></h2></font>
+                <font face="Calibri"><h3>Id Number:<b> {data.id}</b></h3></font>
                
-                <font face="Calibri"><h2>Weight: <b>{data.weight}</b></h2></font>
+                <font face="Calibri"><h3>Weight: <b>{data.weight}</b></h3></font>
            
-                <font face="Calibri"><h2>Height:<b> {data.height}</b></h2></font>
+                <font face="Calibri"><h3>Height:<b> {data.height}</b></h3></font>
               
-                <font face="Calibri"><h2>Type: <b>{data.types[0].type.name}</b></h2></font>
+                <font face="Calibri"><h3>Type: <b>{data.types[0].type.name}</b></h3></font>
              
-                <font face="Calibri"><h2><b>Picture:</b></h2></font>
+                <font face="Calibri"><h3><b>Picture:</b></h3></font>
              
                 <img src={data.sprites.other.home.front_default}/>
                     
