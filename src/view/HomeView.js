@@ -19,7 +19,7 @@ export const HomeView = () => {
     const displayData = () => {
         if(data) {
             return <div>
-                <font face="Perpetua">Name:<b> {data.name}</b></font>
+                <font face="Calibri">Name:<b> {data.name}</b></font>
                 <br></br>               
                 <font face="Calibri">Id Number:<b> {data.id}</b></font>
                 <br></br>
@@ -31,7 +31,7 @@ export const HomeView = () => {
                 <br></br>
                 <font face="Calibri"><b>Picture:</b></font>
                 <br></br>
-                <img src={data.sprites.other.home.front_default}/>
+                <img src={data.sprites.other.home.front_default}width="250" height="250"/>
                     
             </div>
 
