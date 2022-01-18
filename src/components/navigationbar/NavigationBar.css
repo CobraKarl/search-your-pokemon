@@ -1,7 +1,7 @@
 .navigationBarWrapper {
     display: grid;
     grid-template-columns: repeat(10, 1fr);
-    background-color: rgb(7, 7, 7);
+    background-image: linear-gradient(to right, black,#2a75bb, #ffcb05);
 }
 
 .logotype {
@@ -25,4 +25,9 @@
     grid-column: 8/10;
     align-self: center;
    
+}
+
+.field {
+    width: 0;
+
 }

@@ -14,7 +14,7 @@ export const Navigationbar = () => {
     const displayUserIfAuthenticated = () => {
         return (authenticatedUser)
             ? <div className="profle"> <Profile /> </div> 
-            :<span onClick={() => navigate (RoutingPath.SignInView)} className="signIn">Sign in</span>
+            :<span onClick={() => navigate (RoutingPath.SignInView)} className=""></span>
     }
 
     return (
