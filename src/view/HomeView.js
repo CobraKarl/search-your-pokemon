@@ -19,7 +19,7 @@ export const HomeView = () => {
     const displayData = () => {
         if(data) {
             return <div>
-                <font face="Calibri">Name:<b> {data.name}</b></font>
+                <font face="Perpetua">Name:<b> {data.name}</b></font>
                 <br></br>               
                 <font face="Calibri">Id Number:<b> {data.id}</b></font>
                 <br></br>
