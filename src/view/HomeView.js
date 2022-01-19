@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import Axios from "axios";
+import { weightConverter } from "../functions/weightConverter";
 
 
 export const HomeView = () => {
@@ -9,12 +10,11 @@ export const HomeView = () => {
 
     const fetchDataFromExternalAPI = () => {
         Axios.get(`https://pokeapi.co/api/v2/pokemon/${search.toLowerCase()}`)
-        .then((response) => setData(response.data))
+        .then((response) => setData(response.data)+console.log(response.data))
         .catch((Error) => console.log(Error))
     }
 
-    
-
+   
 
     const displayData = () => {
         if(data) {
@@ -26,7 +26,7 @@ export const HomeView = () => {
                 <label>Id Number:</label>
                 <b>{data.id}</b><br />
                 <label>Weight:</label>
-                <b>{data.weight}</b><br />
+                <b>{weightConverter(data.weight)} kg</b><br />
                 <label>Height:</label>
                 <b>{data.height}</b><br />
                 <label>Type:</label>

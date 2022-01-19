@@ -1,7 +1,7 @@
 .navigationBarWrapper {
     display: grid;
     grid-template-columns: repeat(10, 1fr);
-    background-image: linear-gradient(to right, black,#2a75bb, #ffcb05);
+    background-image: linear-gradient(to right, black,#3c5aa6, #ffcb05);
 }
 
 .logotype {
