@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import Axios from "axios";
 import { weightConverter } from "../functions/weightConverter";
+import { heightConverter } from "../functions/heightConverter";
 
 
 export const HomeView = () => {
@@ -26,9 +27,9 @@ export const HomeView = () => {
                 <label>Id Number:</label>
                 <b>{data.id}</b><br />
                 <label>Weight:</label>
-                <b>{weightConverter(data.weight)} kg</b><br />
+                <b>{weightConverter(data.weight)}kg</b><br />
                 <label>Height:</label>
-                <b>{data.height}</b><br />
+                <b>{heightConverter(data.height)}m</b><br />
                 <label>Type:</label>
                 <b>{data.types[0].type.name}</b><br /></font></p>
                 </fieldset>
