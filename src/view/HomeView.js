@@ -42,11 +42,12 @@ export const HomeView = () => {
     return(
         <div>
             <span>
-            <font face="Calibri">Search for Pokemon (Name or Id Number):</font> </span>
+            <font face="Calibri">Search Your Pokemon "Name Or Id":<br /></font> </span>
             <input onChange={(Event) => setSearch (Event.target.value)} />
 
             <br />
-            <button onClick={() => fetchDataFromExternalAPI()}>Find Pokemon</button>
+            <br />
+            <button onClick={() => fetchDataFromExternalAPI()}>Find</button>
             {displayData()}
         </div>
     )
