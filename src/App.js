@@ -4,6 +4,7 @@ import {Navigationbar} from "./components/navigationbar/NavigationBar"
 import {UserProvider} from "./shared/global/provider/UserProvider"
 import "./shared/global/Global.css"
 
+
 function App() {
   return (
     <UserProvider>
@@ -11,6 +12,7 @@ function App() {
      <Navigationbar />
      </Routing>
     </UserProvider>
+    
   );
 }
 

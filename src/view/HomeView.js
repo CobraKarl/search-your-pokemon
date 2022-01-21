@@ -15,7 +15,7 @@ export const HomeView = () => {
         .catch((Error) => console.log(Error))
     }
 
-   
+
 
     const displayData = () => {
         if(data) {
@@ -43,8 +43,9 @@ export const HomeView = () => {
         <div>
             <span>
             <font face="Calibri">Search Your Pokemon "Name Or Id":<br /></font> </span>
-            <input onChange={(Event) => setSearch (Event.target.value)} />
-
+            <input
+                onChange={(Event) => setSearch (Event.target.value)}
+                onKeyPress={Event => Event.key === "Enter" && fetchDataFromExternalAPI(displayData)} />
             <br />
             <br />
             <button onClick={() => fetchDataFromExternalAPI()}>Find</button>

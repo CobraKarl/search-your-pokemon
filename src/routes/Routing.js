@@ -1,8 +1,9 @@
 import React, {useContext, useEffect,} from "react"
 import {BrowserRouter as Router, Route, Routes, Link} from "react-router-dom"
 import {HomeView} from "../view/HomeView"
+import {PageNotFound} from "../view/404page"
 import {UserContext} from "../shared/global/provider/UserProvider"
-import RoutingPath from "./RoutingPath"
+
 
 
 export const Routing = (props) => {
@@ -27,7 +28,8 @@ export const Routing = (props) => {
             {props.children}
             <Routes>
         
-                <Route path="/" element={ <HomeView/> } />
+                <Route exact path="/" element={ <HomeView/> } />
+                <Route path="*" element={ <PageNotFound/>} />
                 
             </Routes>
         </Router>
