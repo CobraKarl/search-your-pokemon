@@ -17,17 +17,20 @@
 }
 
 .logotype, 
-.signIn {
+.toGame {
     cursor: pointer;
 }
 
-.profile {
-    grid-column: 8/10;
-    align-self: center;
+
    
-}
+
 
 .field {
     width: 0;
 
+}
+
+.toGame {
+    grid-column: 8/10;
+    align-self: center;
 }

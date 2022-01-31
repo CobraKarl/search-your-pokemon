@@ -23,7 +23,8 @@ export const Navigationbar = () => {
                 className="logotype"
                 src={Logotype} 
                 alt="Error..."/>
-            {displayUserIfAuthenticated()}
+            <span onClick={() => navigate (RoutingPath.GameView)} className="toGame"><h2>To Game</h2></span>
+           
           
         </div>
     )
