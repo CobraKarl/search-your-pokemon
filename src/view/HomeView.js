@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import Axios from "axios";
 import { weightConverter } from "../functions/weightConverter";
 import { heightConverter } from "../functions/heightConverter";
-
+import Ash from "../shared/images/ash.svg"
 
 export const HomeView = () => {
     const [data, setData] = useState()
@@ -12,13 +12,13 @@ export const HomeView = () => {
     const fetchDataFromExternalAPI = () => {
         Axios.get(`https://pokeapi.co/api/v2/pokemon/${search.toLowerCase()}`)
         .then((response) => setData(response.data)+console.log(response.data))
-        .catch((Error) => console.log(Error))
+        .catch((Error) => setData("Error"))
     }
 
 
 
     const displayData = () => {
-        if(data) {
+        if(data && data!="Error") {
             return <div>
                 <fieldset className="field">
                 <legend><font face="Calibri"><b>Details:</b></font></legend>   
@@ -37,7 +37,14 @@ export const HomeView = () => {
             </div>
 
         }
-    }
+        if(data=="Error"){
+            return <div>
+            <br></br>
+                <img src={Ash} />
+                <div id="info">
+                </div>
+            </div >
+        }    }
 
     return(
         <div>

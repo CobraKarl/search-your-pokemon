@@ -11,13 +11,11 @@
 .ashpic {
     width: 200px;
 }
-.signIn {
-    grid-column: 9/10;
-    align-self: center;
-}
 
-.logotype, 
-.toGame {
+
+
+.logotype
+{
     cursor: pointer;
 }
 
@@ -30,7 +28,9 @@
 
 }
 
-.toGame {
-    grid-column: 8/10;
+.gamelogo {
+  cursor: pointer;
+  grid-column: 8/10;
     align-self: center;
 }
+

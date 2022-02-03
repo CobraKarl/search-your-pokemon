@@ -7,6 +7,7 @@ import { GameView } from "../view/GameView"
 
 
 
+
 export const Routing = (props) => {
 
     const [authenticatedUser, setAuthenticatedUser] = useContext(UserContext)
@@ -28,7 +29,6 @@ export const Routing = (props) => {
         <Router>
             {props.children}
             <Routes>
-        
                 <Route exact path="/" element={ <HomeView/> } />
                 <Route exact path="/game" element={ <GameView/>} />
                 <Route path="*" element={ <PageNotFound/>} />

@@ -5,6 +5,7 @@ import {useNavigate} from "react-router-dom"
 import { UserContext } from "../../shared/global/provider/UserProvider"
 import { Profile } from "../profile/Profile"
 import RoutingPath from "../../routes/RoutingPath"
+import Gamelogo from "../../shared/images/game.svg"
 
 
 export const Navigationbar = () => {
@@ -14,7 +15,7 @@ export const Navigationbar = () => {
     const displayUserIfAuthenticated = () => {
         return (authenticatedUser)
             ? <div className="profle"> <Profile /> </div> 
-            :<span onClick={() => navigate (RoutingPath.SignInView)} className=""></span>
+            :<span onClick={() => navigate (RoutingPath.HomeView)} className=""></span>
     }
 
     return (
@@ -23,7 +24,10 @@ export const Navigationbar = () => {
                 className="logotype"
                 src={Logotype} 
                 alt="Error..."/>
-            <span onClick={() => navigate (RoutingPath.GameView)} className="toGame"><h2>To Game</h2></span>
+            <img onClick={() => navigate (RoutingPath.GameView)}
+                className="gamelogo"
+                src={Gamelogo} 
+                alt="Error..."/>
            
           
         </div>
