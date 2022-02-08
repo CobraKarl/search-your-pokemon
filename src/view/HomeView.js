@@ -55,7 +55,7 @@ export const HomeView = () => {
                 onKeyPress={Event => Event.key === "Enter" && fetchDataFromExternalAPI(displayData)} />
             <br />
             <br />
-            <button onClick={() => fetchDataFromExternalAPI()}>Find</button>
+            <button onClick={() => (search.length>0)&& fetchDataFromExternalAPI()}>Find</button>
             {displayData()}
         </div>
     )

@@ -1,12 +1,47 @@
-import React from "react"
+import React, {useState,useEffect}  from "react";
+import Axios from "axios"
+
+
 
 export const GameView = () => {
+    const [data, setData] =useState ()
+    const [search, setSearch] = useState("");
+
+    const getRandomNumber = () => {
+        return Math.floor (Math.random()*898)
+    }
+
+    const fetchDataFromExternalAPI = () => {
+        Axios.get(`https://pokeapi.co/api/v2/pokemon/${getRandomNumber()}`)
+        .then((response) => setData(response.data))
+        .catch((Error) => setData("Error"))
+    }
+    
+
+    const displayData = () => {
+        if(data) {
+            return <div>
+                <img src={data.sprites.other.home.front_default} width="250" height="250"/>
+
+            </div>
+        }
+    }
+
+
+
     return (
         <div>
-            <h1> Here is where the Game part should be!!!!</h1>
+    
+            <button onClick={() => fetchDataFromExternalAPI()}>START</button>
+            {displayData()}
+            
+            
+
         </div>
     )
-}
+}   
+    
+
 
 
 // 1. Gör Api anrop hämta data och spara i state
