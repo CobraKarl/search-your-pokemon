@@ -1,6 +1,5 @@
 import React, {useState,useEffect}  from "react";
 import Axios from "axios"
-import Ash from "../shared/images/ash.svg"
 
 
 
@@ -12,19 +11,20 @@ export const GameView = () => {
 
     const getRandomNumber = () => {
         return Math.floor (Math.random()*898)
-        
     }
+    const getInitialState = () => {
+        const value ="hej";
+        return value;
+    };
 
-    const verifyGuess = () => {
-      console.log (data.name)
-      
-    }
-    
-   
+    const [value, setValue] = useState(getInitialState);
+    const handleChange = (event) => {
+        setValue(event.target.value);
+    };
 
     const fetchDataFromExternalAPI = () => {
         Axios.get(`https://pokeapi.co/api/v2/pokemon/${getRandomNumber()}`)
-        .then((response) => setData(response.data)+console.log(response.data))
+        .then((response) => setData(response.data))
         .catch((Error) => setData("Error"))
     }
     
@@ -36,39 +36,25 @@ export const GameView = () => {
                 <br></br>
                 <span>
                 <font face="Calibri">Guess The Name Of The Pokemon:</font> </span>
-                <h1>{search}</h1>
-                <input onChange={(Event) => setSearch (Event.target.value)}></input>
-                <button onClick={() => {verifyGuess()}}>Send</button>
-                <h1>{verifyGuess}</h1>
-                   
+                <select value={value} onChange={handleChange}>
+                <option value={getRandomNumber(data)}></option>
+                <option value="nej">NEJ</option>
+                <option value="ja">JA</option>
+            </select>
 
-                 
-           
-                           
-                <br></br>
             </div>
         }
     }
+
+
+
     return (
         <div>
             <button onClick={() => fetchDataFromExternalAPI()}>START</button>
-            {displayData()}  
-             
-            
-     
-            
-        </div>
+            {displayData()}
+        
+         </div>
     )
-
-    return <div>
-        
-    </div>
-        
-    
-    
-    
-
-
 }   
     
 

@@ -1,5 +1,5 @@
 import React from "react";
-import { Route } from "react-router-dom";
+
 import Ash from "../shared/images/ash.svg"
 
 
