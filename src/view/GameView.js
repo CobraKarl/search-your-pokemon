@@ -35,7 +35,7 @@ export const GameView = () => {
                 <img src={data.sprites.other.home.front_default} width="250" height="250"/>
                 <br></br>
                 <span>
-                <font face="Calibri">Guess The Name Of The Pokemon:</font> </span>
+                <font face="Calibri">Guess The Name Of The Pokemon (test):</font> </span>
                 <h1>{search}</h1>
                 <input onChange={(Event) => setSearch (Event.target.value)}></input>
                 <button onClick={() => {verifyGuess()}}>Send</button>
