@@ -69,7 +69,7 @@ export const HomeView = () => {
     <div>
       <span>
         <font face="Calibri">
-          Search Your Pokemon "Name Or Id":
+          Search Your Daddy "Name Or Id":
           <br />
         </font>{" "}
       </span>
