@@ -20,37 +20,37 @@ export const HomeView = () => {
       return (
         <div>
           <div className="details_frame">
-            <fieldset className="field">
+            <fieldset >
               <legend>
-                <font face="Calibri">
+                
                   <b>Details:</b>
-                </font>
+                
               </legend>
               <p>
-                <font face="Calibri">
-                  <label>Name:</label>
+                
+                  <label>Name: </label>
                   <b>{data.name}</b>
                   <br />
-                  <label>Id Number:</label>
+                  <label>Id Number: </label>
                   <b>{data.id}</b>
                   <br />
-                  <label>Weight:</label>
+                  <label>Weight: </label>
                   <b>{weightConverter(data.weight)}kg</b>
                   <br />
-                  <label>Height:</label>
+                  <label>Height: </label>
                   <b>{heightConverter(data.height)}m</b>
                   <br />
-                  <label>Type:</label>
+                  <label>Type: </label>
                   <b>{data.types[0].type.name}</b>
                   <br />
-                </font>
+               
               </p>
             </fieldset>
           </div>
-          <img
+          <img className="br"
             src={data.sprites.other.home.front_default}
-            width="250"
-            height="250"
+            width="400"
+            height="380"
           />
         </div>
       );
@@ -59,7 +59,9 @@ export const HomeView = () => {
       return (
         <div>
           <br></br>
-          <img src={Ash} />
+          <img src={Ash}
+          width="500"
+           />
         </div>
       );
     }
@@ -68,23 +70,28 @@ export const HomeView = () => {
   return (
     <div>
       <span>
-        <font face="Calibri">
-          Search Your Pokemon "Name Or Id":
-          <br />
-        </font>{" "}
+        <div className="ex">
+          Search Your Pokemon (Name Or Id) :
+         
+        </div>
+        <br></br>
       </span>
-      <input
-        onChange={(Event) => setSearch(Event.target.value)}
-        onKeyPress={(Event) =>
-          Event.key === "Enter" && fetchDataFromExternalAPI(displayData)
-        }
-      />
+      
+        <input className="ex2"
+          onChange={(Event) => setSearch(Event.target.value)}
+          onKeyPress={(Event) =>
+            Event.key === "Enter" && fetchDataFromExternalAPI(displayData)
+          }
+        />
+       
       <br />
       <br />
-      <button onClick={() => search.length > 0 && fetchDataFromExternalAPI()}>
+      <button className="button" onClick={() => search.length > 0 && fetchDataFromExternalAPI()}>
         Find
       </button>
-      {displayData()}
+      {displayData()}<br></br>
+     
     </div>
+    
   );
 };

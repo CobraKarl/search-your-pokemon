@@ -5,7 +5,6 @@ import {useNavigate} from "react-router-dom"
 import { UserContext } from "../../shared/global/provider/UserProvider"
 import { Profile } from "../profile/Profile"
 import RoutingPath from "../../routes/RoutingPath"
-import Gamelogo from "../../shared/images/game.svg"
 
 
 export const Navigationbar = () => {
@@ -24,10 +23,7 @@ export const Navigationbar = () => {
                 className="logotype"
                 src={Logotype} 
                 alt="Error..."/>
-            <img onClick={() => navigate (RoutingPath.GameView)}
-                className="gamelogo"
-                src={Gamelogo} 
-                alt="Error..."/>
+
            
           
         </div>

@@ -1,5 +1,6 @@
 import React, {useState,useEffect}  from "react";
 import Axios from "axios"
+import Ash from "../shared/images/ash.svg"
 
 
 
@@ -11,50 +12,66 @@ export const GameView = () => {
 
     const getRandomNumber = () => {
         return Math.floor (Math.random()*898)
-    }
-    const getInitialState = () => {
-        const value ="hej";
-        return value;
+        
     };
 
-    const [value, setValue] = useState(getInitialState);
-    const handleChange = (event) => {
-        setValue(event.target.value);
+    const verifyGuess = () => {
+      setSearch(data.name)
+      
     };
+
+    const submitHandler = (event) => {
+        event.preventDefault();
+        verifyGuess("");
+    };
+    
+   
 
     const fetchDataFromExternalAPI = () => {
         Axios.get(`https://pokeapi.co/api/v2/pokemon/${getRandomNumber()}`)
-        .then((response) => setData(response.data))
+        .then((response) => setData(response.data)+console.log(response.data))
         .catch((Error) => setData("Error"))
-    }
+    };
     
 
     const displayData = () => {
         if(data) {
-            return <div>
+            return  <div>
                 <img src={data.sprites.other.home.front_default} width="250" height="250"/>
                 <br></br>
                 <span>
-                <font face="Calibri">Guess The Name Of The Pokemon:</font> </span>
-                <select value={value} onChange={handleChange}>
-                <option value={getRandomNumber(data)}></option>
-                <option value="nej">NEJ</option>
-                <option value="ja">JA</option>
-            </select>
-
+                <font face="Calibri">Guess The Name Of The Pokemon (test):</font> </span>
+                <h1>{search}</h1>
+                <input value={verifyGuess} onChange={(Event) => setSearch (Event.target.value)}></input>
+                <button onClick={verifyGuess}>Send</button>
+                <h1>{displayData}</h1>
+                           
+                <br></br>
             </div>
         }
+        
+        
     }
-
-
-
     return (
         <div>
-            <button onClick={() => fetchDataFromExternalAPI()}>START</button>
-            {displayData()}
-        
-         </div>
+            <button onClick={fetchDataFromExternalAPI}>START</button>
+            {displayData()}  
+             
+            
+     
+            
+        </div>
     )
+
+    return <div>
+        
+    </div>
+        
+    
+    
+    
+
+
 }   
     
 

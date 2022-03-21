@@ -13,12 +13,17 @@ export const GameView = () => {
     const getRandomNumber = () => {
         return Math.floor (Math.random()*898)
         
-    }
+    };
 
     const verifyGuess = () => {
-      console.log (data.name)
+      setSearch(data.name)
       
-    }
+    };
+
+    const submitHandler = (event) => {
+        event.preventDefault();
+        verifyGuess("");
+    };
     
    
 
@@ -26,43 +31,37 @@ export const GameView = () => {
         Axios.get(`https://pokeapi.co/api/v2/pokemon/${getRandomNumber()}`)
         .then((response) => setData(response.data)+console.log(response.data))
         .catch((Error) => setData("Error"))
-    }
+    };
     
 
     const displayData = () => {
         if(data) {
-            return <div>
+            return  <div>
                 <img src={data.sprites.other.home.front_default} width="250" height="250"/>
                 <br></br>
                 <span>
                 <font face="Calibri">Guess The Name Of The Pokemon (test):</font> </span>
                 <h1>{search}</h1>
-                <input onChange={(Event) => setSearch (Event.target.value)}></input>
-                <button onClick={() => {verifyGuess()}}>Send</button>
-                <h1>{verifyGuess}</h1>
-                   
-
-                 
-           
-                           
+                <input  onChange={(Event) => setSearch (Event.target.value)}></input>
+                <button>Send</button>
+              
                 <br></br>
             </div>
         }
-    }
+        
+        
+    };
     return (
         <div>
-            <button onClick={() => fetchDataFromExternalAPI()}>START</button>
+            <button onClick={fetchDataFromExternalAPI}>START</button>
             {displayData()}  
-             
-            
-     
-            
         </div>
+
     )
 
-    return <div>
-        
-    </div>
+
+
+ 
         
     
     
