@@ -1,0 +1,8 @@
+{
+    "appService.zipIgnorePattern": [
+        "node_modules{,/**}",
+        ".vscode{,/**}"
+    ],
+    "appService.defaultWebAppToDeploy": "/subscriptions/dd7c377c-079c-46a7-9f95-d995abef8196/microsoft.web/sites/subscriptions/dd7c377c-079c-46a7-9f95-d995abef8196/resourceGroups/pokemonwebapp/providers/Microsoft.Web/sites/mypokemon",
+    "appService.deploySubpath": "."
+}
